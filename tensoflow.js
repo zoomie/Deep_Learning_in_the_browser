@@ -28,7 +28,7 @@ model.add(tf.layers.maxPooling2d({
   strides: [2, 2]
 }));
 
-mo del.add(tf.layers.flatten());
+model.add(tf.layers.flatten());
 
 model.add(tf.layers.dense({
   units: 10,
@@ -52,6 +52,10 @@ const x = tf.variable(initialValues);
 const y = tf.zeros([64, 10]);
 
 
-model.fit(x, y)
+model.fit(x, y);
+
+document.write('the predicted tensor is: ');
+document.write(model.predict(x));
+
 
 // document.write(y)
